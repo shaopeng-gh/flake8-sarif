@@ -23,7 +23,7 @@ jobs:
     - run: python -mpip install --upgrade setuptools pip tox virtualenv
     - run: pip install flake8
     - run: pip install flake8-sarif
-    - run: flake8 --format=sarif --output-file=results.sarif
+    - run: flake8 --output-file=results.sarif
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
