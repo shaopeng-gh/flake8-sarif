@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\src",
+    "\\src\\flake8_sarif_reporter"
+  ],
+  "SelectedNode": "\\src\\flake8_sarif_reporter\\reporters.py",
+  "PreviewInSolutionExplorer": false
+}
