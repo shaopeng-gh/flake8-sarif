@@ -32,7 +32,10 @@ class sarifdata:
         else:
             abs_path = os.path.abspath(self.file_path)
             path = Path(abs_path).relative_to(self.root_dir_path)
-        return str(path).replace('\\', '/')
+        path = path.replace('\\', '/')
+        if path.startswith('./'):
+            path = path[2:]
+        return path
 
     def get_base_dir_file_uri(self):
         """Return file uri of the root folder."""
