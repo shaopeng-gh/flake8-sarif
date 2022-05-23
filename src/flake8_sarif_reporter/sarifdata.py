@@ -3,13 +3,24 @@ import os
 from pathlib import Path
 
 
-class sarifdata:
+class SarifData:
     """Collect the results of the checks for SARIF format."""
 
-    def __init__(self, rule_id, rule_level, rule_full_desc, file_path,
-                 root_dir_path, result_message, start_line, start_column,
-                 end_line, end_column, code_snippet):
-        """Init a new sarifdata object."""
+    def __init__(
+        self,
+        rule_id,
+        rule_level,
+        rule_full_desc,
+        file_path,
+        root_dir_path,
+        result_message,
+        start_line,
+        start_column,
+        end_line,
+        end_column,
+        code_snippet,
+    ):
+        """Init a new SarifData object."""
         self.rule_id = rule_id
         self.rule_level = rule_level
         self.rule_full_desc = rule_full_desc
@@ -32,8 +43,8 @@ class sarifdata:
         else:
             abs_path = os.path.abspath(self.file_path)
             path = Path(abs_path).relative_to(self.root_dir_path)
-        path = path.replace('\\', '/')
-        if path.startswith('./'):
+        path = path.replace("\\", "/")
+        if path.startswith("./"):
             path = path[2:]
         return path
 
@@ -46,4 +57,4 @@ class sarifdata:
                 path = os.getcwd()
         else:
             path = self.root_dir_path
-        return Path(path).as_uri() + '/'
+        return Path(path).as_uri() + "/"
