@@ -1,4 +1,4 @@
-"""Packaging logic for Flake8-JSON."""
+"""Packaging logic for Flake8-SARIF."""
 import os
 import sys
 
