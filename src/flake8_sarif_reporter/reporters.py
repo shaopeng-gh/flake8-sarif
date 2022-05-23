@@ -31,18 +31,18 @@ class DefaultSARIF(base.BaseFormatter):
     def format(self, violation):
         """Format a violation."""
         sarif = sarifdata(
-            rule_id=violation.code,
-            rule_level='error'
-            if violation.code.startswith('E') else 'warning',
-            rule_full_desc=violation.text,
-            file_path=violation.filename,
-            root_dir_path=None,
-            result_message=violation.text,
-            start_line=violation.line_number,
-            start_column=violation.column_number,
-            end_line=violation.line_number,
-            end_column=violation.column_number,
-            code_snippet=violation.physical_line)
+                    rule_id=violation.code,
+                    rule_level='error'
+                    if violation.code.startswith('E') else 'warning',
+                    rule_full_desc=violation.text,
+                    file_path=violation.filename,
+                    root_dir_path=None,
+                    result_message=violation.text,
+                    start_line=violation.line_number,
+                    start_column=violation.column_number,
+                    end_line=violation.line_number,
+                    end_column=violation.column_number,
+                    code_snippet=violation.physical_line)
         self.sarif_data.append(sarif)
 
     def print_sarif_report(self):
