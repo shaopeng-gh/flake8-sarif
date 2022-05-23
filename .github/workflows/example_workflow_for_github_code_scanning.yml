@@ -10,11 +10,14 @@
 name: flake8
 
 on:
+  # Allows you to run this workflow when push
   #push:
   #  branches: [ $default-branch, $protected-branches ]
+  # Allows you to run this workflow manually from the Actions tab
   #pull_request:
   #  # The branches below must be a subset of the branches above
   #  branches: [ $default-branch ]
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
