@@ -1,8 +1,9 @@
 """Module containing all of the SARIF reporters for Flake8."""
 import json
 
-from flake8.formatting import base
 from sarifdata import SarifData
+
+from flake8.formatting import base
 
 
 class DefaultSARIF(base.BaseFormatter):
